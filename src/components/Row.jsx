@@ -31,7 +31,7 @@ export default function Row(props) {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(val?.name || "")
+      movieTrailer(val?.title || val?.name || val?.original_name)
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
